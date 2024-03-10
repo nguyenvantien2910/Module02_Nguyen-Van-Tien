@@ -32,8 +32,10 @@ public class StudentManager {
                     updateStudent(scanner);
                     break;
                 case 4:
+                    deleteStudenByID(scanner);
                     break;
                 case 5:
+                    sortById();
                     break;
                 case 6:
                     searchByAge(scanner);
@@ -74,7 +76,7 @@ public class StudentManager {
                 students[i].setName(scanner.nextLine());
                 System.out.println("nhập vào giới tính sinh viên (Male/Female): ");
                 students[i].setGender(scanner.nextLine());
-                System.out.println("nhập vào địa chỉ sinh viên: ");
+                System.out.println("nhập vào tuổi của sinh viên: ");
                 students[i].setAge(Integer.parseInt(scanner.nextLine()));
                 System.out.println("nhập vào địa chỉ sinh viên: ");
                 students[i].setAddress(scanner.nextLine());
@@ -90,32 +92,59 @@ public class StudentManager {
         }
     }
 
-    public static  void deleteStudenByID(Scanner scanner) {
+    public static void deleteStudenByID(Scanner scanner) {
         int number;
+        boolean existing = false;
         System.out.println("Mời bạn nhập ID sinh viên muốn xóa: ");
         number = Integer.parseInt(scanner.nextLine());
 
         for (int i = 0; i < length; i++) {
-
-        }
-    }
-    public static void sortById() {
-        for (int i = 0; i < length; i++) {
-            if (students[i].getId() < students[i+1].getId()) {
-
+            if (students[i].getId() == number) {
+                for (int j = i; j < length - 1; j++) {
+                    students[j] = students[j + 1];
+                }
+                students[length - 1] = null;
+                length--;
+                existing = true;
+                break;
             }
         }
+
+        if (!existing) {
+            System.out.println("Ma sinh vien khong hop le!\n");
+        }
     }
 
-    public  static void searchByAge(Scanner scanner) {
+    public static void sortById() {
+        Student tem;
+        for (int i = 0; i < length -1 ; i++) {
+            for (int j = 1; j < length; j++) {
+                if (students[i].getId() < students[j].getId()) {
+                    tem = students[j];
+                    students[j] = students[i];
+                    students[i] = tem;
+                }
+            }
+        }
+
+        showAllStudent();
+    }
+
+    public static void searchByAge(Scanner scanner) {
         int number;
+        boolean existing = false;
         System.out.println("Mời bạn nhập số tuổi của sinh viên muốn tìm kiếm : ");
         number = Integer.parseInt(scanner.nextLine());
 
         for (int i = 0; i < length; i++) {
             if (students[i].getAge() == number) {
+                existing = true;
                 students[i].displayData();
             }
+        }
+
+        if (!existing) {
+            System.out.println("Không tìm thấy sinh viên hợp lệ\n");
         }
     }
 }
