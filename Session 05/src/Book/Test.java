@@ -1,2 +1,7 @@
-package Book;public class Test {
+package Book;
+
+public class Test {
+    public static void main(String[] args) {
+
+    }
 }
