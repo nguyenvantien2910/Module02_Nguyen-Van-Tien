@@ -4,51 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8025fbbc-1369-4dff-ab92-e1116bd0fbad" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/SS08/BTVN01/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS08/BTVN01/Cylinder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS08/BTVN01/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS08/BTVN02/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS08/BTVN02/Point2D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS08/BTVN02/Point3D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS08/BTVN03/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS08/BTVN03/MoveablePoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS08/BTVN03/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS08/BTVN04/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS08/BTVN04/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS08/BTVN04/Triangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS08/BTVN05/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS08/BTVN05/StaticMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/BTVN03/AudioPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/BTVN03/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/BTVN03/Playable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/BTVN03/VideoPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/BTVN04/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/BTVN04/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/BTVN04/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/BTVN04/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/rikkei/academy/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/rikkei/academy/Colorable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/rikkei/academy/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/rikkei/academy/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/rikkei/academy/Resizable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/rikkei/academy/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SS09/rikkei/academy/Square.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThucHanh01/rikkei/academy/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThucHanh01/rikkei/academy/animals/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThucHanh01/rikkei/academy/animals/Chicken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThucHanh01/rikkei/academy/animals/Tiger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThucHanh01/rikkei/academy/edible/IEdible.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThucHanh01/rikkei/academy/fruit/Apple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThucHanh01/rikkei/academy/fruit/Fruit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThucHanh01/rikkei/academy/fruit/Orange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThucHanh02/rikkei/academy/ComparableCircle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThucHanh03/rikkei/academy/CircleComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThucHanh04/rikkei/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThucHanh04/rikkei/academy/Persion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThucHanh04/rikkei/academy/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThucHanh04/rikkei/academy/Teacher.java" afterDir="false" />
-    </list>
+    <list default="true" id="8025fbbc-1369-4dff-ab92-e1116bd0fbad" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,6 +69,7 @@
       <workItem from="1710389287687" duration="4016000" />
       <workItem from="1710398720999" duration="12426000" />
       <workItem from="1710412171897" duration="5003000" />
+      <workItem from="1710470953155" duration="38000" />
     </task>
     <servers />
   </component>
