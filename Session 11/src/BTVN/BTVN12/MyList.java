@@ -2,7 +2,7 @@ package BTVN.BTVN12;
 
 import java.util.Arrays;
 
-public class MyList {
+public class MyList<E> {
     private int size = 0;
     private static final int DEFAULT_CAPACITY = 10;
     private Object element[];
@@ -15,11 +15,11 @@ public class MyList {
         element = new Object[capacity];
     }
 
-    void add(int index, MyList element) {
+    void add(int index, E element) {
         // Implementation omitted for brevity
     }
 
-    MyList remove(int index) {
+    E remove(int index) {
         // Implementation omitted for brevity
         return null;
     }
@@ -28,7 +28,7 @@ public class MyList {
         return size;
     }
 
-    MyList clone() {
+    E clone() {
         try {
             MyList clonedList = (MyList) super.clone();
             clonedList.element = Arrays.copyOf(element, size);
@@ -38,17 +38,17 @@ public class MyList {
         }
     }
 
-    boolean contains(MyList o) {
+    boolean contains(E o) {
         // Implementation omitted for brevity
         return false;
     }
 
-    int indexOf(MyList o) {
+    int indexOf(E o) {
         // Implementation omitted for brevity
         return -1;
     }
 
-    boolean add(MyList e) {
+    boolean add(E e) {
         // Implementation omitted for brevity
         return false;
     }
@@ -57,7 +57,7 @@ public class MyList {
         // Implementation omitted for brevity
     }
 
-    MyList get(int i) {
+    E get(int i) {
         // Implementation omitted for brevity
         return null;
     }
