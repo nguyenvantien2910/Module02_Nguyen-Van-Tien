@@ -31,7 +31,7 @@ public class Bt08 {
 
             if (updateIndex > 0 && updateIndex <= length) {
                 //thực hiện cập nhật giá trị updateValue vào phần tử có chỉ số updateIndex
-                integers[updateIndex - 1] = updateValue;
+                integers[updateIndex] = updateValue;
                 System.out.println("Đã cập nhật thành công !");
                 System.out.println(Arrays.toString(integers));
                 break;
