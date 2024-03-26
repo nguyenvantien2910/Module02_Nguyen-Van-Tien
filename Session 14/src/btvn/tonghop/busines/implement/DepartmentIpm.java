@@ -9,10 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+public static List<Department> departments = new ArrayList<>();
+public static int countDepartment = 0;
+
 public class DepartmentIpm implements IGenericDesign {
     Scanner scanner = new Scanner(System.in);
-    List<Department> departments = new ArrayList<>();
-    int countDepartment = 0;
 
     @Override
     public void addNemElement() {
