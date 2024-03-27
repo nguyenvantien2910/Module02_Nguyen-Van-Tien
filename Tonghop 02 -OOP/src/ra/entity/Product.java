@@ -154,9 +154,6 @@ public class Product {
         }
         this.catalogId = cateId;
 
-
-
-
         System.out.println("Nhập trạng thái sản phẩm (0: Đang bán – 1: Hết hàng – 2: Không bán): ");
         productStatus = Integer.parseInt(scanner.nextLine());
     }
