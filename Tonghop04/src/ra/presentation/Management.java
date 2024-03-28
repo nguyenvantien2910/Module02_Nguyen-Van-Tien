@@ -57,7 +57,7 @@ public class Management {
 
             switch (choice) {
                 case 1:
-                    employeeIplm.displayData();
+                    employeeIplm.displayAllData();
                     break;
                 case 2:
                     employeeIplm.addNew(sc);

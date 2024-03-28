@@ -2,10 +2,8 @@ package ra.business.entity;
 
 import ra.business.config.ShopMessage;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -92,27 +90,14 @@ public class Employee {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", fullName='" + fullName + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", department=" + department +
-                ", status=" + status +
-                '}';
-    }
 
     public void displayData() {
-        System.out.printf("| ID: %-5d | Name: %-12s | Phone: %-10d\n", this.id, this.fullName, this.phone);
-        System.out.printf("| Address: %-25s | DOB: %-12s \n", this.address, this.dateOfBirth);
-        System.out.printf("| Department: %-10s | Status: %-10s\n", this.department, this.status);
+        System.out.printf("| ID: %-5d | Name: %-15s | Phone: %-12s | Address: %-15s | DOB: %-12s | Department: %-15s | Status: %-10s\n",
+                this.id, this.fullName, this.phone, this.address, this.dateOfBirth.toString(), this.department.getName(), this.status ? "Đang làm" : "Đã nghỉ");
     }
 
     public void inputData(Scanner sc, List<Employee> listEmployee, List<Department> listDepartment, boolean isAdd) {
-        if (isAdd){
+        if (isAdd) {
             this.id = findIdMax(listEmployee);
         }
         this.fullName = inputFullName(sc);
@@ -124,28 +109,29 @@ public class Employee {
     }
 
     private Department inputDepartment(List<Department> listDepartment, Scanner sc) {
-        System.out.println("Chọn phòng ban : ");
-        for (int i = 0; i < listDepartment.size(); i++) {
-            if (listDepartment.get(i).isStatus()) {
-                System.out.printf("%d.%s", i + 1, listDepartment.get(i).getName());
+        if (listDepartment.isEmpty()) {
+            return null;
+        } else {
+            System.out.println("Chọn phòng ban : ");
+            for (int i = 0; i < listDepartment.size(); i++) {
+                if (listDepartment.get(i).isStatus()) {
+                    System.out.printf("%d. %s\n", i + 1, listDepartment.get(i).getName());
+                }
             }
+            System.out.print("Nhập lựa chọn của bạn : ");
+            byte choice = Byte.parseByte(sc.nextLine());
+            listDepartment.get(choice - 1).setNumberEmployee(listDepartment.get(choice - 1).getNumberEmployee() + 1);
+            return listDepartment.get(choice - 1);
         }
-
-        System.out.print("Nhập lựa chọn của bạn : ");
-        byte choice = Byte.parseByte(sc.nextLine());
-        return listDepartment.get(choice - 1);
     }
 
     private LocalDate inputDateOfBirth(Scanner sc) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        System.out.println("Mời nhập ngày tháng năm sinh (dd-MM-yyy):");
         do {
+            System.out.println("Mời nhập ngày tháng năm sinh (dd-MM-yyy):");
             String inputDate = sc.nextLine();
             try {
-                LocalDate returnDate = sdf.parse(inputDate).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                return returnDate;
-            } catch (ParseException e) {
-                System.err.println(ShopMessage.DATE_FORMART_ERROR);
+                LocalDate dateOfBirth = LocalDate.parse(inputDate, ShopMessage.DTF);
+                return dateOfBirth;
             } catch (Exception ex) {
                 System.err.println(ShopMessage.COMMON_ERROR);
             }
@@ -157,7 +143,7 @@ public class Employee {
         do {
             System.out.println("Mời bạn nhập số điện thoại : ");
             String inputPhoneNum = sc.nextLine();
-            if (inputPhoneNum.equals(ShopMessage.REGEX_PHONE_VN)) {
+            if (inputPhoneNum.matches(ShopMessage.REGEX_PHONE_VN)) {
                 return inputPhoneNum;
             } else {
                 System.err.println(ShopMessage.PHONE_REGEX_ERROR);
@@ -166,8 +152,8 @@ public class Employee {
     }
 
     private String inputAdress(Scanner sc) {
-        System.out.println("Mời bạn nhập địa chỉ:");
         do {
+            System.out.println("Mời bạn nhập địa chỉ:");
             String inputAddress = sc.nextLine();
             if (inputAddress.isBlank()) {
                 System.err.println(ShopMessage.FIELD_EMTY_ERROR);
@@ -179,10 +165,10 @@ public class Employee {
     }
 
     private String inputFullName(Scanner sc) {
-        System.out.println("Mời nhập tên nhân viên :");
         do {
+            System.out.println("Mời nhập tên nhân viên :");
             String inputName = sc.nextLine();
-            if (inputName.isBlank()) {
+            if (inputName.trim().isBlank()) {
                 System.err.println(ShopMessage.FIELD_EMTY_ERROR);
             } else {
                 return inputName;
@@ -193,13 +179,11 @@ public class Employee {
 
     private int findIdMax(List<Employee> listEmployee) {
         int maxId = 0;
-        for (int i = 0; i < listEmployee.size(); i++) {
-            if (listEmployee.get(i).getId() > maxId) {
-                maxId = listEmployee.get(i).getId();
+        for (Employee employee : listEmployee) {
+            if (employee.getId() > maxId) {
+                maxId = employee.getId();
             }
         }
         return maxId + 1;
     }
-
-    ;
 }
