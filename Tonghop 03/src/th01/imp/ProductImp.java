@@ -2,6 +2,7 @@ package th01.imp;
 
 import th01.entity.Product;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 public class ProductImp {
     public static void main(String[] args) {
